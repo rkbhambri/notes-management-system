@@ -25,6 +25,16 @@ body {
   letter-spacing: 0.6px;
 }
 
+.filter{
+    text-align: right;
+    width: 90%;
+}
+
+.filter-by-tag{
+    height: 50px;
+    width: 120px;
+}
+
 @media only screen and (max-width: 500px) {
   .flash-container {
     position: absolute;
@@ -39,7 +49,7 @@ body {
     height: 50px;
     text-align: center;
     z-index: 100;
-    padding-top: 10px;
+    padding-top: 50px;
     padding-bottom: 10px;
     -webkit-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
@@ -70,7 +80,7 @@ body {
 
 .nav-container {
   height: 60px;
-  background-color: #3498db;
+  background-color: #02041f;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   padding: 10px 40px;
   font-family: 'Assistant', sans-serif;
@@ -99,13 +109,13 @@ body {
   width: 100px;
   background: rgb(255,255,255);
   border-radius: 4px;
-  color: #3498db;
+  color: #02041f;
   float: right;
   font-weight: bold;
   font-size: 1.5em;
   margin-right: 10px;
   margin-top: 6px;
-  border-radius: 2px;
+  border-radius: 10px;
   padding-top: 7px;
   text-align: center;
   transition: box-shadow 0.2s cubic-bezier(.25,.8,.25,1);
@@ -120,7 +130,7 @@ body {
 @media only screen and (max-width: 500px) {
   .nav-container {
     height: 60px;
-    background-color: #3498db;
+    background-color: #02041f;
     box-shadow: 0 10px 20px rgba(0,0,0,0.09), 0 6px 6px rgba(0,0,0,0.13);
     padding-left: 10px;
     padding-right: 10px;
@@ -141,7 +151,7 @@ body {
     height: 30px;
     width: 80px;
     background: white;
-    color: #3498db;
+    color: #02041f;
     float: right;
     font-size: 1em;
     margin-top: 12px;
@@ -166,10 +176,11 @@ body {
   position: relative;
   height: 200px;
   width: 200px;
+  text-overflow: ellipsis;
   background: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  padding-top: 30px;
+  padding-top: 50px;
   padding-left: 40px;
   padding-right: 40px;
   margin: 40px;
@@ -187,18 +198,20 @@ body {
 }
 
 .note-card-title {
-  width: 270px;
+  width: 100%;
   color: white;
   font-size: 1.25em;
   font-weight: bold;
-  background: #3498db;
+  background: #02041f;
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
+  text-align: justify;
+  min-height: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 1px;
+  /* padding-right: 40px; */
   text-align: center;
   overflow-y: hidden;
 }
@@ -241,18 +254,19 @@ body {
   justify-content: flex-start;
   -webkit-flex-direction: row;
   flex-direction: row;
-  padding-top: 30px;
+  padding-top: 50px;
   width: 200px;
-  height: 200px;
+  height: 300px;
   font-size: 1em;
   white-space: pre-wrap;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .note-card-delete {
   position: absolute;
   left: 10px;
   bottom: 10px;
+  margin-top: 10px;
   background: #c0392b;
   color: white;
   border-radius: 100%;
@@ -277,7 +291,8 @@ body {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  color: #2980b9;
+  /* color: #2980b9; */
+  color: #000;
   border-radius: 100%;
   width: 25px;
   height: 25px;
@@ -290,7 +305,7 @@ body {
 }
 
 .note-card-edit:hover {
-  color: #3498db;
+  color: #02041f;
   transform: rotate(90deg);
 }
 
@@ -361,7 +376,6 @@ body {
 }
 
 .note-title {
-  background-color: #3498db;
   padding: 10px;
 }
 
@@ -371,8 +385,8 @@ body {
   text-align: center;
   font-family: 'Assistant', sans-serif;
   width: 600px;
-  background-color: #2980b9;
-  color: white;
+  color: #000;
+  /* background-color: #2980b9; */
   padding-left: 10px;
   padding-right: 10px;
   -webkit-transition: all 0.2s ease-in;
@@ -418,11 +432,12 @@ body {
   font-weight: bold;
   height: 40px;
   width: 100px;
-  background: #2980b9;
+  background: #02041f;
   color: white;
   float: right;
   font-size: 1.5em;
   border-radius: 2px;
+  text-align: center;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -450,6 +465,8 @@ body {
   flex-direction: row;
   width: 600px;
   height: auto;
+ color: #000;
+
   padding-top: 10px;
 }
 
@@ -567,10 +584,10 @@ body {
     border: none;
     font-size: 1.5em;
     text-align: center;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #02041f;
     font-family: 'Assistant', sans-serif;
-    background-color: #3498db;
-    color: white;
+    /* background-color: #02041f; */
+    color: #000;
     padding-left: 10px;
     padding-right: 10px;
     -webkit-transition: all 0.2s ease-in;
@@ -598,7 +615,7 @@ body {
     font-family: 'Assistant', sans-serif;
     height: 40px;
     width: 100px;
-    background: #3498db;
+    background: #02041f;
     color: white;
     float: right;
     font-size: 1.5em;
@@ -742,11 +759,9 @@ body {
     border: none;
     font-size: 1.2em;
     text-align: center;
-    border-bottom: 2px solid #3498db;
     font-family: 'Assistant', sans-serif;
     width: 290px;
-    background-color: #3498db;
-    color: white;
+    color: #000;
     padding-left: 10px;
     padding-right: 10px;
     -webkit-transition: all 0.2s ease-in;
@@ -774,7 +789,7 @@ body {
     font-family: 'Assistant', sans-serif;
     height: 40px;
     width: 100px;
-    background: #3498db;
+    background: #02041f;
     color: white;
     float: right;
     font-size: 1.5em;
